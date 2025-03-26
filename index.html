@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/plugins/scrollbar/scroll.min.css">
+    <style>
+        .action-control .btn {
+            outline: 0;
+            box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content bg-dark text-light" style="height: 100vh; max-width: 400px;">
+            <!-- logo and status section start -->
+            <div class="content-body" style="height: 40vh;">
+
+                <div class="img-wrapper d-flex justify-content-center p-4">
+
+                    <div class="img-container d-flex justify-content-center align-items-center"
+                        style="height: 35vh; width: 35vh;">
+
+                        <img src="assets/img/Lo1.png" alt="" height="200px" width="200px"
+                            style="position: absolute; z-index: 2;">
+                        <span id="status-spinner" class="text-success"
+                            style="position: absolute; width: 230px; height: 230px;"></span>
+
+                    </div>
+                </div>
+            </div>
+            <!-- logo and status section end -->
+
+            <!-- contact section start -->
+            <div class="content-md-body mt-5" style="height: 30vh;">
+                <div class="row">
+                    <div class="d-flex justify-content-between ps-5 pe-5">
+                        <div class="d-flex align-items-center">
+                            <h3> Contacts</h3>
+                            <span>
+                                <i data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Contacts notified if danger is detected."
+                                    class="ms-2 mt-2 fa fa-exclamation-circle">
+                                </i>
+                            </span>
+                        </div>
+                        <div>
+                            <button class="btn ms-5">
+                                <span><i class="fa fa-cog text-success"></i></span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="me-5 ms-5">
+
+                <div class="row">
+                    <div class="contact-container pe-5 ps-5">
+                        <div class="contact-group d-flex justify-content-between mt-2 mb-2">
+                            <div class="name-div">
+                                <h4 class="text-bold">Police</h4>
+                            </div>
+                            <div class="contact-div">
+                                <h4>911</h4>
+                            </div>
+                        </div>
+
+                        <div class="contact-group d-flex justify-content-between mt-2 mb-2">
+                            <div class="name-div">
+                                <h4 class="text-bold">Hospital</h4>
+                            </div>
+                            <div class="contact-div">
+                                <h4>911</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- contact section end -->
+
+            <!-- action button start -->
+            <div class="content-footer" style="height: 20vh;">
+                <div class="action-control">
+                    <div class="row">
+                        <div class="col-md-12" style="display: flex; justify-content: center;">
+                            <button id="toggle" class="btn btn-off text-light"
+                                style="width: 20vh; height: 20vh; border-radius: 50%;">Activate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- action button end -->
+        </div>
+    </div>
+
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/feather.min.js"></script>
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="assets/plugins/scrollbar/scrollbar.min.js"></script>
+    <script src="assets/plugins/scrollbar/custom-scroll.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="assets/Recorderjs-master/Recorderjs-master/dist/recorder.js"></script>
+    <script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>
