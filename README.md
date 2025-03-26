@@ -24,9 +24,9 @@ Follow these steps to set up the Guardian project:
 1.  **Clone the Git Repository:**
     * Open your preferred terminal or Git client.
     * Navigate to the directory where you want to store the project.
-    * Clone the repository using the following command (replace `<repository_url>` with the actual URL of your Git repository):
+    * Clone the repository using the following command:
         ```bash
-        git clone <repository_url> guardian
+        git clone https://github.com/Guardian-App-arch/Guardian-
         ```
 2.  **Move the Project to WampServer's `www` Directory:**
     * Navigate to the cloned `guardian` folder.
