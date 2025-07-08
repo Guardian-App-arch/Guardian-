@@ -12,9 +12,16 @@
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/plugins/scrollbar/scroll.min.css">
     <style>
-        .action-control .btn {
+        .action-control .btn,
+        input {
             outline: 0;
-            box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+            box-shadow: 0 0 0 .25rem #0d6efd40
+        }
+
+        .form-control,
+        .form-control:focus {
+            background-color: #00000000;
+            color: #fff;
         }
     </style>
 </head>
@@ -55,9 +62,95 @@
                             </span>
                         </div>
                         <div>
-                            <button class="btn ms-5">
+                            <button class="btn ms-5" data-bs-toggle="modal" data-bs-target="#con-close-modal">
                                 <span><i class="fa fa-cog text-success"></i></span>
                             </button>
+
+
+                            <!-- edit form -->
+                            <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog"
+                                aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content bg-dark">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Add or Edit Contacts</h4>
+
+                                            <button data-bs-dismiss="modal" aria-label="Close" class="btn"
+                                                style="background-color: #0d6efd40;">
+                                                <i class="fa fa-times text-light"></i>
+                                            </button>
+                                        </div>
+
+                                        <form id="contacts-form" method="POST">
+                                            <div class="modal-body p-4">
+                                                <h3>Contact 1</h3>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="field-1" class="form-label">Name</label>
+                                                            <input type="text" name="contact-1-name"
+                                                                class="form-control" id="field-1"
+                                                                placeholder="eg. Hospital">
+                                                            <input type="hidden" name="request" value="update-contacts">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="field-2" class="form-label">Phone</label>
+                                                            <input type="tel" name="contact-1-email"
+                                                                class="form-control" id="field-2"
+                                                                placeholder="eg. +211920282737">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <h3>Contact 2</h3>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="field-3" class="form-label">Name</label>
+                                                            <input type="text" name="contact-2-name"
+                                                                class="form-control" id="field-3"
+                                                                placeholder="eg. Hospital">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="field-4" class="form-label">Phone</label>
+                                                            <input type="tel" name="contact-2-email"
+                                                                class="form-control" id="field-4"
+                                                                placeholder="eg. +211920282737">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <h3>Contact 3</h3>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="field-5" class="form-label">Name</label>
+                                                            <input type="text" name="contact-3-name"
+                                                                class="form-control" id="field-5"
+                                                                placeholder="eg. Hospital">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="field-6" class="form-label">Phone</label>
+                                                            <input type="tel" name="contact-3-email"
+                                                                class="form-control" id="field-6"
+                                                                placeholder="eg. +211920282737">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-primary" id="submit-btn">save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -66,22 +159,33 @@
                 <hr class="me-5 ms-5">
 
                 <div class="row">
-                    <div class="contact-container pe-5 ps-5">
-                        <div class="contact-group d-flex justify-content-between mt-2 mb-2">
-                            <div class="name-div">
-                                <h4 class="text-bold">Police</h4>
-                            </div>
-                            <div class="contact-div">
-                                <h4>911</h4>
+                    <div class="contact-container pe-5 ps-5"
+                        style="height: 20vh; overflow-y: auto;">
+
+                        <div id="contacts-container">
+                            <div class="contact-group d-flex justify-content-between mt-2 mb-2">
+                                <div class="details-div">
+                                    <h4 class="text-bold" id="contact-1-name">Not Set</h4>
+                                    <span class="text-sm" id="contact-1-email">Not Set</span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="contact-group d-flex justify-content-between mt-2 mb-2">
-                            <div class="name-div">
-                                <h4 class="text-bold">Hospital</h4>
+                        <div id="contacts-container">
+                            <div class="contact-group d-flex justify-content-between mt-2 mb-2">
+                                <div class="details-div">
+                                    <h4 class="text-bold" id="contact-2-name">Not Set</h4>
+                                    <span class="text-sm" id="contact-2-email">Not Set</span>
+                                </div>
                             </div>
-                            <div class="contact-div">
-                                <h4>911</h4>
+                        </div>
+
+                        <div id="contacts-container">
+                            <div class="contact-group d-flex justify-content-between mt-2 mb-2">
+                                <div class="details-div">
+                                    <h4 class="text-bold" id="contact-3-name">Not Set</h4>
+                                    <span class="text-sm" id="contact-3-email">Not Set</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -121,6 +225,126 @@
     <script src="assets/js/script.js"></script>
 
 
+    <script>
+        $(document).ready(function () {
+            // submits the form
+            $("#contacts-form").submit(function (event) {
+                event.preventDefault();
+
+                let btn = $("#submit-btn");
+                const btnOriginalContent = btn.html();
+                let form = $(this)[0];
+                let formData = new FormData(form);
+
+                btn.prop("disabled", true);
+                btn.html(
+                    '<span class="spinner spinner-border-sm" role="status">saving</span>'
+                );
+
+                $.ajax({
+                    url: "submit-form.php",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        btn.prop("disabled", false);
+                        btn.html(btnOriginalContent);
+
+                        if (response === "success") {
+                            alert("contacts has been updated");
+                            window.location.reload(true);
+                        } else if (response === 'executionError') {
+                            alert('execution Error');
+                        } else if (response === 'dbConnectionError') {
+                            alert('database connection error');
+                        } else if (response === 'unknownError') {
+                            alert('unknown Error');
+                        } else {
+                            alert("something went wrong");
+                            console.log(response);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        btn.prop("disabled", false);
+                        btn.html(btnOriginalContent);
+
+                        alert("AJAX Error");
+                        console.log(jqXHR, textStatus, errorThrown);
+                    },
+                });
+
+                formData = new FormData();
+            });
+
+
+            // gets the contacts list
+            const request = 'get-contacts';
+            const contactsContainer = $('#contacts-container');
+            let contact1Name = $('#contact-1-name');
+            let contact1Email = $('#contact-1-email');
+
+            let contact2Name = $('#contact-2-name');
+            let contact2Email = $('#contact-2-email');
+
+            let contact3Name = $('#contact-3-name');
+            let contact3Email = $('#contact-3-email');
+
+            $.ajax({
+                url: 'get-contacts.php',
+                type: 'GET',
+                data: {
+                    request: request
+                },
+                dataType: 'json',
+                success: function (response) {
+                    if (response.status === 'success') {
+                        // contacts list
+                        contact1Name.html(response.id1.name);
+                        contact1Email.html(response.id1.email);
+
+                        contact2Name.html(response.id2.name);
+                        contact2Email.html(response.id2.email);
+
+                        contact3Name.html(response.id3.name);
+                        contact3Email.html(response.id3.email);
+
+
+                        // inputs fields
+                        
+                        if(response.id1.name !== 'Not Set'){
+                            $('#field-1').val(response.id1.name);
+                        }
+                        if(response.id1.email !== 'Not Set'){
+                            $('#field-2').val(response.id1.email);
+                        }
+                        
+                        if(response.id2.name !== 'Not Set'){
+                            $('#field-3').val(response.id2.name);
+                        }
+                        if(response.id2.email !== 'Not Set'){
+                            $('#field-4').val(response.id2.email);
+                        }
+                        
+                        if(response.id3.name !== 'Not Set'){
+                            $('#field-5').val(response.id3.name);
+                        }
+                        if(response.id3.email !== 'Not Set'){
+                            $('#field-6').val(response.id3.email);
+                        }
+                        
+                        
+                    } else if (response.status === 'error') {
+                        alert('something went wrong');
+                        console.log(response.error);
+                    } else {
+                        alert('unknown Error');
+                        console.log(response.error);
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
