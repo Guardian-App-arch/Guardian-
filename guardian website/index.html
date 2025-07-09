@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <main class="main-wrapper">
+            <div class="main-content">
+                <div class="main-header">
+                    <h1>GUARDIAN PROJECT</h1>
+                </div>
+
+                <div class="main-body">
+                    <p>
+                        The Guardian project began with a simple yet powerful idea: to use artificial intelligence to make our communities
+                        safer. As a team of university students, we're proud to announce the successful development of our AI-powered safety
+                        tool. This innovative system actively monitors ambient audio, identifies potential dangers, and immediately sends
+                        critical alerts to those who can help - from police and hospitals to family members. Guardian is our contribution to a
+                        more secure future, putting intelligent assistance directly where it's needed most.
+                    </p>
+
+                    <div class="sub-header">
+                        <h3>Members</h3>
+                    </div>
+
+                    <div class="block-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img class="sm-img" src="assets/img/Untitled.png" alt="">
+                                    <p>Samuel</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img class="sm-img" src="assets/img/Untitled.png" alt="">
+                                    <p>Mark</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img class="sm-img" src="assets/img/Untitled.png" alt="">
+                                    <p>Gout</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img class="sm-img" src="assets/img/Untitled.png" alt="">
+                                    <p>Lillian</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img class="sm-img" src="assets/img/Untitled.png" alt="">
+                                    <p>Mario</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="sub-header">
+                        <h3>Overview</h3>
+                    </div>
+
+                    <div class="section">
+                        <p>
+                            The project is an AI-powered tool called <strong>Guardian</strong> designed to detect dangerous situations and instantly alert
+                            relevant parties such as police, hospitals, or family members. By continuously analyzing ambient audio, Guardian
+                            identifies threats and ensures timely notification, improving response to dangerous situations.
+                            Guardian utilizes HTML, CSS, and JavaScript for a responsive front-end, with PHP handling back-end
+                            operations. Audio transcription is powered by the Whisper (base.en) AI model, while Ollama running Phi3.5 analyzes the
+                            transcribed text for signs of danger. In the event of a threat, Twilio is used to dispatch immediate SMS alerts.
+                        </p>
+                    </div>
+
+                    <div class="sub-header">
+                        <h3>The Flow</h3>
+                    </div>
+
+                    <div class="section">
+                        <img src="assets/img/project-img1.png" alt="" class="lg-img">
+                    </div>
+
+                    <div class="section">
+                        <ul>
+                            <li>When activated, the recording starts. A 15seconds of the recording is sent for transcription</li>
+                            <li>The 15 seconds of the recording is transcribed to text by Whisper (base.en) model.</li>
+                            <li>The text is then analyzed by phi3.5 for sign of danger.</li>
+                            <li>In case of danger, an alert (SMS messages) is sent to whom it may concern. If no danger is detected, the process is repeated until deactivated.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="main-footer">
+                    <small>designed & developed by the Guardian team</small>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
