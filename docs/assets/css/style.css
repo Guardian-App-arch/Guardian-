@@ -23,6 +23,7 @@ body {
 }
 
 .main-header {
+    padding: 0.5rem;
     font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
