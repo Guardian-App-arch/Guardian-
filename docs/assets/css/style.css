@@ -23,7 +23,6 @@ body {
 }
 
 .main-header {
-    padding: 1.5rem;
     font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
@@ -37,7 +36,6 @@ body {
 
 .main-body .sub-header {
     margin: 2rem 0;
-    padding: 0 1rem;
     font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
